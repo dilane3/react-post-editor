@@ -21,6 +21,7 @@ const EmojiCard = ({show, getEmoji, animationShow}) => {
           boxShadow: "0 2px 4px rgb(143, 142, 142)" ,
           fontFamily: "ubuntu"
         }}
+        preload={true}
       />
     </section>
   );
