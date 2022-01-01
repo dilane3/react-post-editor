@@ -65,17 +65,18 @@ body {
 }
 
 textarea.text-editor {
+  display: flex;
   width: calc(100% - 70px);
   min-width: calc(100% - 70px);
   max-width: calc(100% - 70px);
-  height: 150px;
+  min-height: 60px;
   max-height: 150px;
+  height: auto;
   margin-left: auto;
   margin-top: 10px;
   line-height: 25px;
   color: rgb(66, 64, 64);
   border: 0;
-  /* border-bottom: 1px solid #cacaca; */
   overflow-y: scroll;
   scrollbar-width: none;
   overflow-x: hidden;

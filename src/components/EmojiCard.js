@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import Picker from 'emoji-picker-react';
-import "./App.css"
+import "../App.css"
 
 const EmojiCard = ({show, getEmoji, animationShow}) => {
   const sectionRef = useRef()

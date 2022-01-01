@@ -52,7 +52,7 @@
   font-size: 14px;
   display: flex;
   flex-wrap: wrap;
-  word-break:keep-all;
+  word-break: break-all;
   width: 100%;
   margin-top: 20px;
   line-height: 20px;

@@ -1,12 +1,17 @@
 import React, {useRef, useState } from 'react';
-import EmojiCard from './EmojiCard';
+import EmojiCard from './components/EmojiCard';
 import "./App.css"
-import Post from './Post';
+import Post from './components/Post';
+import Modal from './components/modal';
 
 const image = require("./boules2.png")
 
 const App = () => {
   const [showEmoji, setShowEmoji] = useState(false)
+  const [showModal, setShowModal] = useState({
+    status: false,
+    file: null
+  })
   const [post, setPost] = useState("")
   const [img, setImage] = useState(null)
   const [posts, setPosts] = useState([])
@@ -58,6 +63,10 @@ const App = () => {
       setPost("")
       setImage(null)
     }
+  }
+
+  const displayModalImage = (file, status) => {
+    setShowModal({file, status})
   }
 
   return (
@@ -112,8 +121,14 @@ const App = () => {
 
       {
         posts.reverse().map(post => {
-          return <Post key={post.id} post={post} />
+          return <Post key={post.id} post={post} onShowImage={(file) => displayModalImage(file, true)} />
         })
+      }
+
+      {
+        showModal.status && (
+          <Modal show={showModal.status} file={showModal.file} onCloseModal={() => displayModalImage(null, false)} />
+        )
       }
     </main>
   );

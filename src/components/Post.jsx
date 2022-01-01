@@ -1,9 +1,9 @@
 import React from 'react'
 import "./post.css"
 
-const image = require("./boules2.png")
+const image = require("../boules2.png")
 
-const Post = ({post}) => {
+const Post = ({post, onShowImage}) => {
   const {id, content, file, date} = post
 
   const formatDate = (date) => {
@@ -34,7 +34,7 @@ const Post = ({post}) => {
       </div>
 
       <div className="post-image" style={{display: file ? "block":"none"}}>
-        <img src={file} alt="" />
+        <img src={file} onClick={() => onShowImage(file)} />
       </div>
     </article>
   )
